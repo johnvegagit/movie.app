@@ -1,0 +1,108 @@
+/***** Moive ui stye *****/ 
+.movie-container-section{
+
+    & .index{
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    & .movie-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        border-radius: 10px;
+
+        &:hover{
+            & button{
+                display: unset;
+            }
+        }
+
+        & button{
+            display: none;
+            width: 40px;
+            min-height: 382px;
+            position: absolute;
+            z-index: 10;
+            padding: 5px;
+            background-color: #23232F60;
+            border: none;
+            cursor: pointer;
+            transition: .3s ease;
+
+            & i {
+                font-size: 35px;
+                font-weight: 900;
+                opacity: .8;
+            }
+            
+            &:hover{
+                background-color: #23232F90;
+                & i {opacity: 1;}
+            }
+        }
+
+        & button:nth-child(1){
+            left: 0;
+            /* background-image: linear-gradient(to left, #23232F00, #23232F); */
+        }
+        & button:nth-child(2){
+            right: 0;
+            /* background-image: linear-gradient(to right, #23232F00, #23232F); */
+        }
+
+        & .movie-container-list{
+            min-width: 320px;
+            overflow: auto;
+            display: grid;
+            grid-template-columns: repeat(20, auto);
+            justify-content: start;
+            gap: 20px;
+            padding: 30px 0 0 0;
+            position: relative;
+
+            & .movie-inner{
+                width: 100%;
+                min-height: 382px;
+                position: relative;
+
+                & .movie-num{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    padding: 7px;
+                    background-color: #009A5A;
+                    backdrop-filter: blur(20px);
+                    color: #FFFFFF;
+                    font-size: 20px;
+                    font-weight: 600;
+                    border-radius: 10px 0 0 0;
+                }
+
+                & .movie-img{
+                    width: 250px;
+                    height: 340px;
+                    background-color: #33333E;
+                    border-radius: 10px;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 450px) {
+    .movie-container-section{
+    
+        & .index{
+            font-size: 40px;
+            text-align: start;
+        }
+    
+    }
+}
+/***** End Moive ui stye *****/
